@@ -169,6 +169,37 @@ button:hover,
   background: #f8fafc;
 }
 
+.pdf-frame {
+  position: relative;
+}
+
+.watermark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  color: rgba(180, 35, 24, 0.18);
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  transform: rotate(-24deg);
+  user-select: none;
+}
+
+.view-only {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media print {
+  body {
+    display: none;
+  }
+}
+
 .missing {
   padding: 18px 16px;
   color: var(--muted);
