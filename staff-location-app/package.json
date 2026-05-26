@@ -1,0 +1,13 @@
+{
+  "name": "staff-location-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local shop staff viewer for location-specific report data.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

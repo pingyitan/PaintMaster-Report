@@ -1,0 +1,32 @@
+[
+  {
+    "username": "admin",
+    "password": "admin123",
+    "name": "Admin",
+    "location": "ALL"
+  },
+  {
+    "username": "mb",
+    "password": "mb123",
+    "name": "MB Staff",
+    "location": "MB"
+  },
+  {
+    "username": "sa",
+    "password": "sa123",
+    "name": "SA Staff",
+    "location": "SA"
+  },
+  {
+    "username": "ba",
+    "password": "ba123",
+    "name": "BA Staff",
+    "location": "BA"
+  },
+  {
+    "username": "br",
+    "password": "br123",
+    "name": "BR Staff",
+    "location": "BR"
+  }
+]

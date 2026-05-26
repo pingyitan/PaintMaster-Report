@@ -1,0 +1,36 @@
+STAFF LOCATION VIEWER
+
+1. Run the Excel report macro first. It should export these files:
+
+   C:\Users\admin\Documents\report\staff_view\MB.pdf
+   C:\Users\admin\Documents\report\staff_view\SA.pdf
+   C:\Users\admin\Documents\report\staff_view\BA.pdf
+   C:\Users\admin\Documents\report\staff_view\BR.pdf
+
+2. Double-click:
+
+   Start Staff App.bat
+
+3. On the shop PC, open:
+
+   http://localhost:3000
+
+4. Staff on the same shop Wi-Fi can open:
+
+   http://SHOP-PC-IP:3000
+
+DEFAULT LOGINS
+
+admin / admin123 = all locations
+mb / mb123 = MB only
+sa / sa123 = SA only
+ba / ba123 = BA only
+br / br123 = BR only
+
+Change passwords in:
+
+config\users.json
+
+IMPORTANT
+
+Keep this app running on the shop PC while staff need access.
