@@ -150,6 +150,19 @@ function escapeHtml(value) {
 
 function page(title, content, user = null) {
   const userLabel = user ? `${escapeHtml(user.name)} (${escapeHtml(user.location)})` : "";
+  const guardScript = user ? `
+  <script>
+    document.addEventListener("contextmenu", (event) => event.preventDefault());
+    document.addEventListener("keydown", (event) => {
+      const key = event.key.toLowerCase();
+      if ((event.ctrlKey || event.metaKey) && ["p", "s", "u"].includes(key)) {
+        event.preventDefault();
+      }
+      if (key === "printscreen") {
+        event.preventDefault();
+      }
+    });
+  </script>` : "";
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -167,6 +180,7 @@ function page(title, content, user = null) {
     ${user ? `<a class="logout" href="/logout">Logout</a>` : ""}
   </header>
   <main>${content}</main>
+  ${guardScript}
 </body>
 </html>`;
 }
@@ -196,14 +210,15 @@ function dashboardPage(user) {
   const reportCards = reportLocations.map((location) => {
     const pdfPath = path.join(STAFF_REPORT_DIR, `${location}.pdf`);
     const exists = fs.existsSync(pdfPath);
+    const watermark = `${location} - ${user.username} - ${new Date().toLocaleString("en-MY", { hour12: false })}`;
     return `
       <article class="report-card">
         <div class="report-card-header">
           <h2>${escapeHtml(location)}</h2>
-          ${exists ? `<a class="button" href="/report/${location}" target="_blank">Open PDF</a>` : ""}
+          ${exists ? `<span class="view-only">View only</span>` : ""}
         </div>
         ${exists
-          ? `<iframe title="${escapeHtml(location)} report" src="/report/${location}"></iframe>`
+          ? `<div class="pdf-frame"><iframe title="${escapeHtml(location)} report" src="/report/${location}#toolbar=0&navpanes=0&scrollbar=1"></iframe><div class="watermark">${escapeHtml(watermark)}</div></div>`
           : `<p class="missing">No report exported yet for ${escapeHtml(location)}. Run the Excel macro first.</p>`}
       </article>
     `;
