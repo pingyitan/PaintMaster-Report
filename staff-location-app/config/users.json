@@ -1,31 +1,31 @@
 [
   {
     "username": "admin",
-    "password": "admin123",
+    "password": "3269Admin123$",
     "name": "Admin",
     "location": "ALL"
   },
   {
     "username": "mb",
-    "password": "mb123",
+    "password": "3269MB160$",
     "name": "MB Staff",
     "location": "MB"
   },
   {
     "username": "sa",
-    "password": "sa123",
+    "password": "32691358SA$",
     "name": "SA Staff",
     "location": "SA"
   },
   {
     "username": "ba",
-    "password": "ba123",
+    "password": "3269BA414554$",
     "name": "BA Staff",
     "location": "BA"
   },
   {
     "username": "br",
-    "password": "br123",
+    "password": "32698GSP$",
     "name": "BR Staff",
     "location": "BR"
   }
